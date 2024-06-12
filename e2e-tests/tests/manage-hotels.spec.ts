@@ -58,3 +58,19 @@ test("should allow the user to sign in" , async({page})=>{
 
 
 });
+
+test("should display hotel", async({page})=>{
+    await page.goto(`${UI_URL}my-hotels`);
+
+    await expect(page.getByText("hello")).toBeVisible();
+    await expect(page.getByText("good hotel in")).toBeVisible();
+    await expect(page.getByText("dhanbad , india")).toBeVisible();
+    await expect(page.getByText("Budget")).toBeVisible();
+    await expect(page.getByText("100 per night")).toBeVisible();
+    await expect(page.getByText("2 adults , 4 childs")).toBeVisible();
+    await expect(page.getByText("5 star rating")).toBeVisible();
+
+   await expect(page.getByRole("link" , {name: "Add Hotel"} )).toBeVisible();
+   await expect(page.getByRole("link" , {name: "View Details"} )).toBeVisible();
+
+})
