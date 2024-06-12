@@ -17,13 +17,12 @@ const AddHotel = () =>{
             }
       });
 
-      const handleSave = (hotelFormData: FormData) =>{
-            mutate(hotelFormData);
+      const handleSave = (HotelFormData: FormData) =>{
+            mutate(HotelFormData);
       }
 
       return<ManageHotelForm onSave={handleSave} isLoading={isLoading} /> //disable the save button when reqesting so that user does not make too many requests 
 };
 
 export default AddHotel;
-
 
