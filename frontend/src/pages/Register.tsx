@@ -70,7 +70,7 @@ const Register=()=>{
 
                 <label className="text-gray-700 text-sm font-bold flex-1">
                     email 
-                    <input type="email" className="border rounded w-full py-1 px-2 font-normal" {...register("email" ,{required:"This field is required"})}></input>
+                    <input type="email" className="border rounded w-full py-1 px-2 font-normal"  {...register("email" ,{required:"This field is required"})}></input>
                     {errors.email && (
                         <span className="text-red-500">{errors.email.message}</span>
                     )}
@@ -79,7 +79,7 @@ const Register=()=>{
 
                 <label className="text-gray-700 text-sm font-bold flex-1">
                     password 
-                    <input type="password" className="border rounded w-full py-1 px-2 font-normal" {...register("password" ,{required:"This field is required" , minLength:{ value:6 , message:"password must be atleast 6 char long "}})}></input>
+                    <input type="password" className="border rounded w-full py-1 px-2 font-normal" autoComplete="password" {...register("password" ,{required:"This field is required" , minLength:{ value:6 , message:"password must be atleast 6 char long "}})}></input>
                     {errors.password && (
                         <span className="text-red-500">{errors.password.message}</span>
                     )}
@@ -88,7 +88,7 @@ const Register=()=>{
 
                 <label className="text-gray-700 text-sm font-bold flex-1">
                     confirm password 
-                    <input type="password" className="border rounded w-full py-1 px-2 font-normal" {...register("confirmpassword" , {validate:(val) =>{ 
+                    <input type="password" className="border rounded w-full py-1 px-2 font-normal" autoComplete="confirm-password" {...register("confirmpassword" , {validate:(val) =>{ 
                            if(!val)
                             {
                                 return "This field is required";
